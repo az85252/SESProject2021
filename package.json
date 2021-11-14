@@ -2,7 +2,7 @@
   "name": "SESProjectAz85252",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://az85252.github.io/az85252SESproject/",
+  "homepage": "https://az85252.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
