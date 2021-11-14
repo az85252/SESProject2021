@@ -29,8 +29,6 @@
   }
 
   .infoSectionCenter{
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
     box-shadow: 0px 0px 4px #888888;
@@ -74,7 +72,7 @@
     font-size: 24px;
   }
   button {
-    background: linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);
+    background: rgb(34, 109, 195) ;
     border-radius: 8px;
     border: none;
     color: white;
@@ -86,10 +84,10 @@
     text-decoration: none !important; 
     width: 75%;
   }
-  button:hover{background:linear-gradient(0deg, rgb(34, 195, 168) 0%, rgb(112, 255, 176)100%)}
+  button:hover{background:rgb(81, 185, 255);}
   button:active{background:rgba(112,16,10,1);}
   button.parkSelector { 
-    background: linear-gradient(0deg, rgb(240, 209, 152) 0%, rgb(252, 238, 213)100%); 
+    background:rgb(230, 230, 210); 
     border:none; 
     color: black; 
     height: 48px; 
@@ -99,21 +97,21 @@
   button.parkSelector:active{background:chocolate;}
 
   button.smallButton { 
-    background: linear-gradient(0deg, rgb(24, 24, 24) 0%, rgb(133, 133, 133)100%); 
+    background: rgb(83, 83, 83); 
     border:none; 
     color: white;
     height: 48px; 
     width: auto;
     display: inline; 
-    margin: 4px;
+    margin: 2px;
   }
-  button.smallButton:hover{background:linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);}
+  button.smallButton:hover{background:rgb(34, 109, 195);}
   button.smallButton:active{background:rgba(112,16,10,1);}
   .spacing{
   height : 32px;
   }
   input {
-    background: linear-gradient(0deg,  rgb(212, 212, 212) 0%,rgb(241, 241, 241)100%);
+    background: snow;
     border-radius: 8px;
     border: none;
     font-size: 20px;
@@ -127,9 +125,10 @@
  }
 
  .footer {
+  -webkit-backdrop-filter: blur(10px);
   align-items: center;
-  background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);
-  background: rgb(0,0,0,1);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.75);
   color: white;
   display: flex;
   flex-direction: row;
@@ -148,8 +147,8 @@
   margin: 8vw auto;
   width: 33vw;
 }
-.footerbutton:hover{background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);}
-.footerbutton:active{background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(12,16,120,1) 100%);}
+.footerbutton:hover{background:rgb(131, 131, 131);}
+.footerbutton:active{background:rgb(10, 46, 112);}
 .logo{
   height: 64px;
   padding: 0vw;
