@@ -132,7 +132,11 @@ class Webcams extends Component {
               </form>
               </div>
           </>
-        )): null}</div>: <div className="infoSectionCenter"> 
+        )): null}
+        <div >
+          <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Close</button>
+        </div>
+        </div>: <div className="infoSectionCenter"> 
         <div>
         <img src={info} className='infoImg'/><h1>No Web Cameras Found!</h1>  
         <div className="infoSection">
@@ -140,6 +144,7 @@ class Webcams extends Component {
           <li>Check for any spelling and grammar mistakes</li>
           <li>Make sure the park name you entered is valid</li>
         </div>
+        <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Close</button>
         </div>
         </div>) : null}
       </> //END
