@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import info from '../images/info.png';
 
-class JSONTest extends Component {
+class Activity extends Component {
 
   state = {
     isActive: false,
@@ -111,4 +111,4 @@ class JSONTest extends Component {
   }
 
 }
-export default JSONTest;
+export default Activity;
