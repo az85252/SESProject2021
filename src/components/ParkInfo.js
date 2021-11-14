@@ -153,7 +153,7 @@ class ParkInfo extends Component {
                         {this.state.entrancePasses.map((x) => (
                             <div className="infoSectionCenter"> 
                                 <h3>{x.title}: ${x.cost} USD</h3>
-                                <h6>{x.description}</h6>
+                                <p>{x.description}</p>
                             </div>
                         ))}
                     </div>
