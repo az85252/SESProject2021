@@ -143,18 +143,18 @@ class ParkInfo extends Component {
                         <h1>Entrance Fees</h1>
                         <div className="whiteline" />
                         {this.state.entranceFees.map((x) => (
-                            <>
+                            <div className="infoSectionCenter"> 
                                 <h3>{x.title}: ${x.cost} USD</h3>
                                 <p>{x.description}</p>
-                            </>
+                            </div>
                         ))}
                         <h1>Entrance Passes</h1>
                         <div className="whiteline" />
                         {this.state.entrancePasses.map((x) => (
-                            <>
+                            <div className="infoSectionCenter"> 
                                 <h3>{x.title}: ${x.cost} USD</h3>
                                 <h6>{x.description}</h6>
-                            </>
+                            </div>
                         ))}
                     </div>
 
@@ -168,10 +168,11 @@ class ParkInfo extends Component {
                     </div>
 
                     <div className="infoSection">
+                        <h1>Hours </h1>
+                        <div className="whiteline" />
                         {this.state.operatingHours.map((x) => (
-                            <>
-                                <h1>Hours</h1>
-                                <div className="whiteline" />
+                            <div className="infoSection"> 
+                                <h1>{x.name}</h1>
                                 <p>{x.description}</p>
                                 {(x.standardHours.sunday !== "") ? <h5>Sunday: {x.standardHours.sunday}</h5> : null}
                                 {(x.standardHours.monday !== "") ? <h5>Monday: {x.standardHours.monday}</h5> : null}
@@ -180,13 +181,13 @@ class ParkInfo extends Component {
                                 {(x.standardHours.thursday !== "") ? <h5>Thursday: {x.standardHours.thursday}</h5> : null}
                                 {(x.standardHours.friday !== "") ? <h5>Friday: {x.standardHours.friday}</h5> : null}
                                 {(x.standardHours.saturday !== "") ? <h5>Saturday: {x.standardHours.saturday}</h5> : null}
-                                <h3>Closed on these Exceptions</h3>
+                                <h3>Closed on these Exceptions:</h3>
                                 {x.exceptions.map((y) => (
                                     <>
                                         <h5>From {y.startDate} to {y.endDate}: {y.name}</h5>
                                     </>
                                 ))}
-                            </>
+                            </div>
                         ))}</div>
 
                     <div className="infoSection">
