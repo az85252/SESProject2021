@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import { useState } from "react"
 import info from '../images/info.png';
 
-class Part2 extends Component {
+class Webcams extends Component {
   APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
 
   constructor(props) {
@@ -76,27 +75,27 @@ class Part2 extends Component {
       <>
         <div className="spacing" />
         <div className="spacing" />
-        <div className="infoTip">
+        <div className="infoSectionCenter">
         <h1>Webcams</h1>
         <div>
           <label>
             Name:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
-          {(1 === 1) ? <button className="smSquare" onClick={() => this.handleSubmit()}>Submit</button> : null}
-        {(1 === 1) ? <button className="smSquare" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Clear</button> : null}
+          {(1 === 1) ? <button className="smallButton" onClick={() => this.handleSubmit()}>Submit</button> : null}
+        {(1 === 1) ? <button className="smallButton" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Clear</button> : null}
         </div>
        
         {Object.keys(this.state.alphabetChart).map((x) => (
           <>
-            {((this.state.value).trim() === "") ? <button className="smSquare" onClick={() => this.setState({ value: x })}>{x}</button> : null}
+            {((this.state.value).trim() === "") ? <button className="smallButton" onClick={() => this.setState({ value: x })}>{x}</button> : null}
           </>
         ))}
         
 
         </div>
         {this.state.showImages === false ?(
-          <div className="infoTip">
+          <div className="infoSectionCenter">
           {(this.state.value).trim() !== "" ? <h1>Results</h1>:<h1>Parks</h1>}
           {Object.keys(this.state.names).map((x) => (
             <>
@@ -106,7 +105,7 @@ class Part2 extends Component {
           </div>
         ):null}
 
-        {this.state.showImages === true ? ( this.state.images.length !== 0 ? <div className="infoTip">
+        {this.state.showImages === true ? ( this.state.images.length !== 0 ? <div className="infoSectionCenter">
         {this.state.images.length !== 0 && this.state.showImages === true ? this.state.images.map((x) => (
           <>
             <h1>{x.title}</h1>
@@ -133,7 +132,7 @@ class Part2 extends Component {
               </form>
               </div>
           </>
-        )): null}</div>: <div className="infoTip"> 
+        )): null}</div>: <div className="infoSectionCenter"> 
         <div>
         <img src={info} className='infoImg'/><h1>No Webcams Found!</h1>  
         <div className="infoSection">
@@ -142,14 +141,10 @@ class Part2 extends Component {
           <li>Make sure the park name you entered is valid</li>
         </div>
         </div>
-        
-        
         </div>) : null}
-        
-
       </> //END
     );
   }
 }
 
-export default Part2;
+export default Webcams;

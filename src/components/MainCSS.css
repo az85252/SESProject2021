@@ -28,7 +28,7 @@
     width: 75%;
   }
 
-  .infoTip{
+  .infoSectionCenter{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgb(255, 255, 255);
@@ -70,14 +70,16 @@
   .field {
     margin: 10px 0;
   }
-  
+  h1{
+    font-size: 24px;
+  }
   button {
     background: linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);
     border-radius: 8px;
     border: none;
     color: white;
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     height: 64px;
     margin: 8px auto;
     overflow: hidden;
@@ -95,7 +97,8 @@
   }
   button.parkSelector:hover{background:lightyellow;}
   button.parkSelector:active{background:chocolate;}
-  button.smSquare { 
+
+  button.smallButton { 
     background: linear-gradient(0deg, rgb(24, 24, 24) 0%, rgb(133, 133, 133)100%); 
     border:none; 
     color: white;
@@ -104,8 +107,8 @@
     display: inline; 
     margin: 4px;
   }
-  button.smSquare:hover{background:linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);}
-  button.smSquare:active{background:rgba(112,16,10,1);}
+  button.smallButton:hover{background:linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);}
+  button.smallButton:active{background:rgba(112,16,10,1);}
   .spacing{
   height : 32px;
   }
@@ -122,3 +125,46 @@
  label{
    display: inline-block;
  }
+
+ .footer {
+  align-items: center;
+  background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);
+  background: rgb(0,0,0,1);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  justify-content: left;
+  margin: 0px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the bottom of the page */
+  width: 100%; /* Full width */
+}
+.footerbutton{
+  background: rgb(0,0,0,0);
+  border-radius: 0px;
+  font-size: 24px;
+  height: 64px;
+  margin: 8vw auto;
+  width: 32vw;
+}
+.footerbutton:hover{background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);}
+.footerbutton:active{background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(12,16,120,1) 100%);}
+.logo{
+  height: 64px;
+  padding: 0vw;
+  position: relative;
+  top: 0px;
+  width: auto;
+}
+.infoImg{  
+  height: 128px;
+  padding: 0vw;
+  position: relative;
+  top: 0px;
+  width: auto;
+
+}
+.barspacing{
+  width: 100%;
+}

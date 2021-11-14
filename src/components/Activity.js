@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-import "./Part1.css";
 import info from '../images/info.png';
 
 class JSONTest extends Component {
@@ -27,7 +26,6 @@ class JSONTest extends Component {
           "name": "Test"
         },]
     }];
-
   activityData = [{}];
 
   //Immediately load all possible activities
@@ -55,7 +53,6 @@ class JSONTest extends Component {
           this.ParksByActivityList = json.data;
           this.ParksByActivityList = this.ParksByActivityList;
           this.setSelectedID(activityID);
-          console.log(this.state.selectedID + " " + activityID);
         });
     }
     this.switchButton(activityID);
@@ -73,7 +70,6 @@ class JSONTest extends Component {
     }
   }
 
-
   setSelectedID(value) {
     this.setState(({
       selectedID: value,
@@ -87,23 +83,25 @@ class JSONTest extends Component {
       <div>
         <div className="spacing" />
         <div className="spacing" />
-
-        <div className="infoTip">
+        <div className="infoSectionCenter">
           <h1>Activities</h1>
           {this.state.isActive === false ?
-            <div className="infoTip">
+            <div className="infoSectionCenter">
               <img src={info} className='infoImg' />
-              <h3>• To find the parks based on the activity you want to search, click on one of the activities below.</h3>
+              <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
             : null}
           {this.activityData.map((x) => (
             <div className="parkList">
-              {(this.state.selectedID === x.id && this.state.isActive === true) ? <button onClick={() => this.switchButton(x.id)}>{x.name}</button> :
+              {(this.state.selectedID === x.id && this.state.isActive === true) ?
+                <button onClick={() => this.switchButton(x.id)}>{x.name}</button> :
                 <button onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
-              {(this.state.selectedID === x.id && this.state.isActive === true) ? this.ParksByActivityList[0].parks.map((x) => (
-                <>
-                  <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> <button className="parkSelector">{x.fullName}</button></Link>
-                </>)) : null}
+              {(this.state.selectedID === x.id && this.state.isActive === true) ?
+                this.ParksByActivityList[0].parks.map((x) => (
+                  <>
+                    <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
+                    <button className="parkSelector">{x.fullName}</button></Link>
+                  </>)) : null}
             </div>
 
           ))}</div>

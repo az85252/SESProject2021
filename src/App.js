@@ -1,9 +1,10 @@
 import './App.css';
+import './components/MainCSS.css';
 import React, { Component } from 'react'
-import Footer from "./components/Footer"
-import JSONTest from './components/JSONTest';
+import NavBar from "./components/NavBar"
+import Activity from './components/Activity';
 import ParkInfo from "./components/ParkInfo";
-import Part2 from "./components/Part2";
+import Webcams from "./components/Webcams";
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -29,7 +30,6 @@ class App extends Component {
       .then(json => {
         temp = json.data;
         //after fetching the parks we grab the parkcodes and put them to a list
-        
         for (var i = 0; i < temp.length; i++) {
           this.parksList[i] = temp[i].parkCode;
         }
@@ -42,8 +42,8 @@ class App extends Component {
       <main>
         <div className="App">
           <Switch>
-            <Route exact path='/' component={JSONTest} />
-            <Route exact path='/webcams' component={Part2} />
+            <Route exact path='/' component={Activity} />
+            <Route exact path='/webcams' component={Webcams} />
             <Route exact path='/parkinfo' component={ParkInfo} />
           </Switch>
           {this.state.parks.map((x) => (
@@ -53,13 +53,10 @@ class App extends Component {
           ))}
           
         </div>
-        <Footer />
-        
-
+        <NavBar />
       </main>
     );
   }
-
 }
 
 export default App;
