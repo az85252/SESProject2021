@@ -30,8 +30,8 @@ class Webcams extends Component {
 
 
   handleSubmit() {
-    this.setState({ showImages: true});
-    if (this.state.value.toLowerCase() in this.state.names){
+    this.setState({ showImages: true });
+    if (this.state.value.toLowerCase() in this.state.names) {
       var APIurl = "https://developer.nps.gov/api/v1/webcams?parkCode=" + (this.state.names[this.state.value.toLowerCase()])[1] + "&limit=" + this.state.limit + this.APIkey;
       console.log(APIurl)
       fetch(APIurl)
@@ -41,7 +41,7 @@ class Webcams extends Component {
           console.log(this.state.images);
         });
     }
-    
+
 
   }
   createLetterSlider() {
@@ -49,7 +49,7 @@ class Webcams extends Component {
     for (var i = 0; i < 26; i++) {
       temp[String.fromCharCode(65 + i)] = "null";
     }
-    this.setState(({ alphabetChart: temp }), () => {});
+    this.setState(({ alphabetChart: temp }), () => { });
   }
 
   getParkNamesAndIDs() {
@@ -75,77 +75,79 @@ class Webcams extends Component {
       <>
         <div className="spacing" />
         <div className="spacing" />
-        <div className="infoSectionCenter">
-        <h1>Web Cameras</h1>
-        <div>
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          {(1 === 1) ? <button className="smallButton" onClick={() => this.handleSubmit()}>Submit</button> : null}
-        {(1 === 1) ? <button className="smallButton" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Clear</button> : null}
-        </div>
-       
-        {Object.keys(this.state.alphabetChart).map((x) => (
-          <>
-            {((this.state.value).trim() === "") ? <button className="smallButton" onClick={() => this.setState({ value: x })}>{x}</button> : null}
-          </>
-        ))}
-        
-
-        </div>
-        {this.state.showImages === false ?(
+        {this.state.showImages === false ?
           <div className="infoSectionCenter">
-          {(this.state.value).trim() !== "" ? <h1>Results</h1>:<h1>Parks</h1>}
-          {Object.keys(this.state.names).map((x) => (
-            <>
-              {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
-            </>
-          ))}
-          </div>
-        ):null}
+            <h1>Web Cameras</h1>
+            <div>
+              <label>
+                Name:
+                <input type="text" value={this.state.value} onChange={this.handleChange} />
+              </label>
+              <button className="smallButton" onClick={() => this.handleSubmit()}>Submit</button>
+              <button className="smallButton" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Clear</button>
+            </div>
 
-        {this.state.showImages === true ? ( this.state.images.length !== 0 ? <div className="infoSectionCenter">
-        {this.state.images.length !== 0 && this.state.showImages === true ? this.state.images.map((x) => (
-          <>
-            <h1>{x.title}</h1>
-            <div className="infoSection">
-            {x.isStreaming === true ? <h3>Streaming, {x.status}</h3> : <h3>Non-Streaming, {x.status}</h3>}
-            <t>{x.description}</t>
-            
-            {x.images.length > 0 ?
-              x.images.map((y) => (
-                
-                <div className= "imageSection">
-                <h3>{y.title}</h3>
-                <a href={y.url}>
-                <img src={y.url} alt={y.altText}></img>
-                </a>
-                  
-                  <p>{y.caption}</p>
-                  <i>{y.credit}</i>
-                </div>
-              ))  
-              : <h2>No images provided!</h2>} 
-              <form action={x.url} target="popup">
-              <button className="testlink">More Info</button>
-              </form>
+            {Object.keys(this.state.alphabetChart).map((x) => (
+              <>
+                {((this.state.value).trim() === "") ? <button className="smallButton" onClick={() => this.setState({ value: x })}>{x}</button> : null}
+              </>
+            ))}
+          </div> : null}
+
+        {this.state.showImages === false ? (
+          <div className="infoSectionCenter">
+            {(this.state.value).trim() !== "" ? <h1>Results</h1> : <h1>Parks</h1>}
+            {Object.keys(this.state.names).map((x) => (
+              <>
+                {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
+              </>
+            ))}
+          </div>
+        ) : null}
+
+        {this.state.showImages === true ? (this.state.images.length !== 0 ? <div className="infoSectionCenter">
+        
+          <h1>Web Cameras</h1>
+          <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+
+          {this.state.images.length !== 0 && this.state.showImages === true ? this.state.images.map((x) => (
+            <>
+              <div className="infoSection">
+                <h1>{x.title}</h1>
+                <div className="seperator"/>
+                {x.isStreaming === true ? <h3>Streaming, {x.status}</h3> : <h3>Non-Streaming, {x.status}</h3>}
+                <t>{x.description}</t>
+
+                {x.images.length > 0 ?
+                  x.images.map((y) => (
+
+                    <div className="imageSection">
+                      <h3>{y.title}</h3>
+                      <a href={y.url}>
+                        <img src={y.url} alt={y.altText}></img>
+                      </a>
+
+                      <p>{y.caption}</p>
+                      <i>{y.credit}</i>
+                    </div>
+                  ))
+                  : <h2>No images provided!</h2>}
+                <form action={x.url} target="popup">
+                  <button className="testlink">More Info</button>
+                </form>
               </div>
-          </>
-        )): null}
-        <div >
-          <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Close</button>
-        </div>
-        </div>: <div className="infoSectionCenter"> 
-        <div>
-        <img src={info} className='infoImg'/><h1>No Web Cameras Found!</h1>  
-        <div className="infoSection">
-          <li>This park may not have any web cameras provided</li>
-          <li>Check for any spelling and grammar mistakes</li>
-          <li>Make sure the park name you entered is valid</li>
-        </div>
-        <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: []})}>Close</button>
-        </div>
+            </>
+          )) : null}
+        </div> : <div className="infoSectionCenter">
+          <div>
+            <img src={info} className='infoImg' /><h1>No Web Cameras Found!</h1>
+            <div className="infoSection">
+              <li>This park may not have any web cameras provided</li>
+              <li>Check for any spelling and grammar mistakes</li>
+              <li>Make sure the park name you entered is valid</li>
+            </div>
+            <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+          </div>
         </div>) : null}
       </> //END
     );

@@ -110,7 +110,7 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Activities</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.activitiesList.map((x) => (
                             <li>{x}</li>
                         ))}
@@ -118,14 +118,14 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Topics related to this park</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.topicsList.map((x) => (
                                 <li>{x}</li>
                         ))}</div>
 
                     <div className="infoSection">
                         <h1>Phone Numbers</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.phoneNumbers.map((x) => (
                             <>
                                 <li>{x.type}: {x.phoneNumber}</li>
@@ -133,7 +133,7 @@ class ParkInfo extends Component {
                             </>
                         ))}
                         <h1>Email Addresses</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.emailAddresses.map((x) => (
                                 <li>{x.emailAddress}</li>
                         ))}
@@ -141,7 +141,7 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Entrance Fees</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.entranceFees.map((x) => (
                             <div className="infoSectionCenter"> 
                                 <h3>{x.title}: ${x.cost} USD</h3>
@@ -149,7 +149,7 @@ class ParkInfo extends Component {
                             </div>
                         ))}
                         <h1>Entrance Passes</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.entrancePasses.map((x) => (
                             <div className="infoSectionCenter"> 
                                 <h3>{x.title}: ${x.cost} USD</h3>
@@ -160,7 +160,7 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Directions</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         <p>{this.state.directionsInfo}</p>
                         <form action={this.state.directionsUrl} target="popup">
                         <button>More Info</button>
@@ -169,7 +169,7 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Hours </h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.operatingHours.map((x) => (
                             <div className="infoSection"> 
                                 <h1>{x.name}</h1>
@@ -192,11 +192,11 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Addresses</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.addresses.map((x) => (
                             <div className="infoSection">
                                 <h2>{x.type}</h2>
-                                <div className="whiteline" />
+                                <div className="seperator" />
                                 {x.line1 !== "" ? <h4>{x.line1}</h4> : null}
                                 {x.line2 !== "" ? <h4>{x.line2}</h4> : null}
                                 {x.line3 !== "" ? <h4>{x.line3}</h4> : null}
@@ -206,13 +206,13 @@ class ParkInfo extends Component {
 
                     <div className="infoSection">
                         <h1>Weather Information</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         <p>{this.state.weatherInfo}</p>
                     </div>
 
                     <div className="infoSection">
                         <h1>Images</h1>
-                        <div className="whiteline" />
+                        <div className="seperator" />
                         {this.state.images.length > 0 ?
                             this.state.images.map((x) => (
                                 <div className="imageSection">
