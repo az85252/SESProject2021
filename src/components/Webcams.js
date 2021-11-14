@@ -76,7 +76,7 @@ class Webcams extends Component {
         <div className="spacing" />
         <div className="spacing" />
         <div className="infoSectionCenter">
-        <h1>Webcams</h1>
+        <h1>Web Cameras</h1>
         <div>
           <label>
             Name:
@@ -134,9 +134,9 @@ class Webcams extends Component {
           </>
         )): null}</div>: <div className="infoSectionCenter"> 
         <div>
-        <img src={info} className='infoImg'/><h1>No Webcams Found!</h1>  
+        <img src={info} className='infoImg'/><h1>No Web Cameras Found!</h1>  
         <div className="infoSection">
-          <li>This park may not have any webcams provided</li>
+          <li>This park may not have any web cameras provided</li>
           <li>Check for any spelling and grammar mistakes</li>
           <li>Make sure the park name you entered is valid</li>
         </div>
