@@ -1,25 +1,42 @@
 .footer {
-  background: rgb(0,0,0,0);
-  /*background: linear-gradient(180deg, rgba(64,64,64,.75) 0%, rgba(32, 32, 32,1) 100%);*/
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  align-items: center;
+  background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);
+  background: rgb(0,0,0,1);
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
-  height: 100px;
-  padding-bottom: 15px;
-  margin: auto;
+  height: 64px;
+  justify-content: left;
+  margin: 0px;
   position: fixed; /* Set the navbar to fixed position */
-  bottom: 0; /* Position the navbar at the bottom of the page */
+  top: 0; /* Position the navbar at the bottom of the page */
   width: 100%; /* Full width */
 }
 .footerbutton{
-  background: rgb(0,0,0,1);
-  height: 130px;
-  width: 50vw;
-  margin: 8px auto;
+  background: rgb(0,0,0,0);
   border-radius: 0px;
-  font-size: 36px;
+  font-size: 24px;
+  height: 64px;
+  margin: 8vw auto;
+  width: 32vw;
+}
+.footerbutton:hover{background: linear-gradient(180deg, rgba(64,64,64,1) 0%, rgba(32, 32, 32,1) 100%);}
+.footerbutton:active{background:linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(12,16,120,1) 100%);}
+.logo{
+  height: 64px;
+  padding: 0vw;
+  position: relative;
+  top: 0px;
+  width: auto;
+}
+.infoImg{  
+  height: 128px;
+  padding: 0vw;
+  position: relative;
+  top: 0px;
+  width: auto;
+
+}
+.barspacing{
+  width: 100%;
 }

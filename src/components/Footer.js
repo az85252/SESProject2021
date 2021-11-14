@@ -1,12 +1,17 @@
 import React from 'react'
 import './Footer.css'
 import { Link } from 'react-router-dom'
+import logo from '../images/logo.png';
+
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <div>
+            <div className="footer">
             <Link to='/' style={{ textDecoration: 'none', }}><button className="footerbutton">Home</button></Link>
-            <Link to='/Part2' style={{ textDecoration: 'none' }}><button className="footerbutton">WebCams</button></Link>
+            <img src={logo} className='logo'/>
+            <Link to='/webcams' style={{ textDecoration: 'none' }}><button className="footerbutton">Web Cams</button></Link>
+            </div>
         </div>
     )
 }

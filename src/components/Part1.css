@@ -1,67 +1,124 @@
-.container {
-    text-align: center;
+  .container {
     background-color: white;
     padding: 20px 0;
+    text-align: center;
   }
   .newPost {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     margin: 0 auto;
     width: 300px;
-   
+  }
+  .App {
+    background-color: #ffffff;
+    background-size: cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+  }
+  .infoSection{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #888888;
+    justify-content: left;
+    margin: 8px auto;
+    padding: 30px;
+    text-align:justify;
+    width: 75%;
   }
 
-  .App {
-    background-image: url("../images/appbg.jpg");
-    background-color: #cccccc;
-    background-size: cover;
-    position: sticky;
-    font-family: 'Franklin Gothic Medium';
-    
+  .infoTip{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 0px 0px 4px #888888;
+    justify-content: center;
+    margin: 8px auto;
+    padding: 30px;
+    text-align:center;
+    width: 75%;
+  }
+
+  .spacingsmall{
+    height: 3px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  .whiteline{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.473);
+    border-radius: 2px;
+    height: 3px;
+    margin-bottom: 10px;
+    width: 100%;
   }
   img{
     width: 50%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .imageSection{
+    display: block;
+    justify-content: center;
   }
   .field {
     margin: 10px 0;
   }
-  .blockk{
-    display: block;
-    vertical-align: middle;
-  }
-  .htransition{
-    transition: width 600ms ease-out, height 600ms ease-out;
-  }
+  
   button {
-    backdrop-filter: blur(10px);
-    background: rgba(31, 31, 31, 0.473);
+    background: linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);
     border-radius: 8px;
     border: none;
     color: white;
-    font-family: 'Franklin Gothic Medium';
-    height: 64px;
-    width: 66.6%;
     display: block;
-    overflow: hidden;
-    text-decoration: none;
-    text-align: center;
-    text-decoration: none !important; 
     font-size: 20px;
+    height: 64px;
     margin: 8px auto;
-    transition: background-color .15s;
-
+    overflow: hidden;
+    text-decoration: none !important; 
+    width: 75%;
   }
-  .spacing{
-  height : 100px;
-  }
-  button:hover{background:rgba(255, 255, 255, 0.781);}
-  button:focus{}
+  button:hover{background:linear-gradient(0deg, rgb(34, 195, 168) 0%, rgb(112, 255, 176)100%)}
   button:active{background:rgba(112,16,10,1);}
-
-  button.testlink { background:beige; border:none; color: black; height: 48px; width: 50%;box-shadow: none;}
-  button.smSquare { background:beige; border:none; color: black; height: 48px; width: auto;box-shadow: none; display: inline;}
-  button.testlink:hover{background-color:lightyellow;}
-  button.testlink:active{background-color:chocolate;}
+  button.parkSelector { 
+    background: linear-gradient(0deg, rgb(240, 209, 152) 0%, rgb(252, 238, 213)100%); 
+    border:none; 
+    color: black; 
+    height: 48px; 
+    width: 66.6%;
+  }
+  button.parkSelector:hover{background:lightyellow;}
+  button.parkSelector:active{background:chocolate;}
+  button.smSquare { 
+    background: linear-gradient(0deg, rgb(24, 24, 24) 0%, rgb(133, 133, 133)100%); 
+    border:none; 
+    color: white;
+    height: 48px; 
+    width: auto;
+    display: inline; 
+    margin: 4px;
+  }
+  button.smSquare:hover{background:linear-gradient(0deg, rgb(45, 34, 195) 0%, rgb(112, 202, 255)100%);}
+  button.smSquare:active{background:rgba(112,16,10,1);}
+  .spacing{
+  height : 32px;
+  }
+  input {
+    background: linear-gradient(0deg,  rgb(212, 212, 212) 0%,rgb(241, 241, 241)100%);
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    height: 48px;
+    margin: 4px;
+    overflow: hidden;
+    text-decoration: none !important; 
+  }
+ label{
+   display: inline-block;
+ }
