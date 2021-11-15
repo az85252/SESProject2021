@@ -211,6 +211,7 @@ class ParkInfo extends Component {
                         <div className="seperator" />
                         <p>{this.state.weatherInfo}</p>
                     </div>
+                    
                     <div className="infoSection">
                         <h1>Images</h1>
                         <div className="seperator" />
