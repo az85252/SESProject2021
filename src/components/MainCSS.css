@@ -80,8 +80,9 @@ button {
   color: white;
   display: block;
   font-size: 20px;
-  height: 72px;
+  height: auto;
   margin: 8px auto;
+  min-height: 64px;
   overflow: hidden;
   text-decoration: none !important; 
   width: 75%;
@@ -95,7 +96,9 @@ button.parkSelector {
   background:rgb(230, 230, 210); 
   border:none; 
   color: black; 
-  height: 64px; 
+  height: auto;
+  min-height: 48px;
+  padding: 8px 8px;
   width: 66.6%;
 }
 button.parkSelector:hover{background:lightyellow;}
@@ -106,6 +109,7 @@ button.smallButton {
   background: rgb(83, 83, 83); 
   border:none; 
   color: white;
+  min-height: auto;
   height: 48px; 
   width: auto;
   display: inline; 
@@ -121,7 +125,7 @@ button.smallButton:active{background:rgba(112,16,10,1);}
 
 input {
   background: gainsboro;
-  border-radius: 8px;
+  border-radius: 16px;
   border: none;
   font-size: 20px;
   height: 48px;
@@ -155,6 +159,7 @@ label{
   font-size: 20px;
   height: 48px;
   margin: 8px 8px 8px 8px;
+  min-height: auto;
   width: 33vw;
 }
 
