@@ -174,7 +174,7 @@ class ParkInfo extends Component {
                         <div className="seperator" />
                         {this.state.operatingHours.map((x) => (
                             <div className="infoSection"> 
-                                <h1>{x.name}</h1>
+                                <h2>{x.name}</h2>
                                 <p>{x.description}</p>
                                 {(x.standardHours.sunday !== "") ? <h5>Sunday: {x.standardHours.sunday}</h5> : null}
                                 {(x.standardHours.monday !== "") ? <h5>Monday: {x.standardHours.monday}</h5> : null}
