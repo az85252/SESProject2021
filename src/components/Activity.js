@@ -96,12 +96,14 @@ class Activity extends Component {
               {(this.state.selectedID === x.id && this.state.isActive === true) ?
                 <button onClick={() => this.switchButton(x.id)}>{x.name}</button> :
                 <button onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
-              {(this.state.selectedID === x.id && this.state.isActive === true) ?
-                this.ParksByActivityList[0].parks.map((x) => (
+              {(this.state.selectedID === x.id && this.state.isActive === true) ? 
+              <div >
+                {this.ParksByActivityList[0].parks.map((x) => (
                   <>
                     <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
                     <button className="parkSelector">{x.fullName}</button></Link>
-                  </>)) : null}
+                  </>))}</div> : null}
+                  
             </div>
 
           ))}</div>
