@@ -220,10 +220,10 @@ class ParkInfo extends Component {
                                     <h2 style={{textAlign: "center"}}>{x.title}</h2>
                                     <a href={x.url}>
                                         <BrowserView>
-                                            <img src={x.url} alt={x.altText}></img>
+                                            <img src={x.url} alt={x.altText} className="img" style = {{width:"75%"}}></img>
                                         </BrowserView>
                                         <MobileView>
-                                            <img src={x.url} alt={x.altText} style={{width:"100%"}}></img>    
+                                            <img src={x.url} alt={x.altText} className="img"></img>    
                                         </MobileView>
                                     </a>
                                     <div className="infoSection">

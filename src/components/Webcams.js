@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import info from '../images/info.png';
 import {isMobile} from 'react-device-detect';
+import {BrowserView, MobileView} from 'react-device-detect';
 
 class Webcams extends Component {
   APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -108,7 +109,7 @@ class Webcams extends Component {
           </div>
         ) : null}
 
-        {this.state.showImages === true ? (this.state.images.length !== 0 ? <div className="infoSectionCenter">
+        {this.state.showImages === true ? (this.state.images.length !== 0 ? <div>
           <h1>Web Cameras</h1>
           {this.state.images.length !== 0 && this.state.showImages === true ? this.state.images.map((x) => (
             <>
@@ -123,7 +124,12 @@ class Webcams extends Component {
                     <div className="imageSection">
                       <h3 style={{textAlign: "center"}} >{y.title}</h3>
                       <a href={y.url}>
-                        <img src={y.url} alt={y.altText}></img>
+                        <BrowserView>
+                            <img src={y.url} alt={y.altText} className="img" style = {{width:"75%"}}></img>
+                        </BrowserView>
+                        <MobileView>
+                            <img src={y.url} alt={y.altText} className="img"></img>    
+                        </MobileView>
                       </a>
                       <div className="infoSection">
                         <p>{y.caption}</p>
