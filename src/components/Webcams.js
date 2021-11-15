@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import info from '../images/info.png';
-import {isMobile} from 'react-device-detect';
-import {BrowserView, MobileView} from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 class Webcams extends Component {
   APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -23,13 +23,11 @@ class Webcams extends Component {
   componentDidMount() {
     this.createLetterSlider();
     this.getParkNamesAndIDs();
-
   }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-
 
   handleSubmit() {
     this.setState({ showImages: true });
@@ -43,9 +41,8 @@ class Webcams extends Component {
           console.log(this.state.images);
         });
     }
-
-
   }
+
   createLetterSlider() {
     var temp = {}
     for (var i = 0; i < 26; i++) {
@@ -99,12 +96,12 @@ class Webcams extends Component {
         {this.state.showImages === false ? (
           <div className="infoSectionCenter">
             {(this.state.value).trim() !== "" ? <h1>Results</h1> : <h1>Parks</h1>}
-            <div className="dropDownParks" style={ isMobile ? {width:"100%"}: {}}>
-            {Object.keys(this.state.names).map((x) => (
-              <>
-                {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
-              </>
-            ))}
+            <div className="dropDownParks" style={isMobile ? { width: "100%" } : {}}>
+              {Object.keys(this.state.names).map((x) => (
+                <>
+                  {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
+                </>
+              ))}
             </div>
           </div>
         ) : null}
@@ -115,20 +112,20 @@ class Webcams extends Component {
             <>
               <div className="infoSection">
                 <h1>{x.title}</h1>
-                <div className="seperator"/>
+                <div className="seperator" />
                 {x.isStreaming === true ? <h3>Streaming, {x.status}</h3> : <h3>Non-Streaming, {x.status}</h3>}
                 <t>{x.description}</t>
 
                 {x.images.length > 0 ?
                   x.images.map((y) => (
                     <div className="imageSection">
-                      <h3 style={{textAlign: "center"}} >{y.title}</h3>
+                      <h3 style={{ textAlign: "center" }} >{y.title}</h3>
                       <a href={y.url}>
                         <BrowserView>
-                            <img src={y.url} alt={y.altText} className="img" style = {{width:"75%"}}></img>
+                          <img src={y.url} alt={y.altText} className="img" style={{ width: "75%" }}></img>
                         </BrowserView>
                         <MobileView>
-                            <img src={y.url} alt={y.altText} className="img"></img>    
+                          <img src={y.url} alt={y.altText} className="img"></img>
                         </MobileView>
                       </a>
                       <div className="infoSection">
@@ -143,19 +140,19 @@ class Webcams extends Component {
                 </form>
               </div>
             </>
-          )) 
-          : null}
+          ))
+            : null}
 
-          <div className="footer"style={{
-              position: "fixed",
-              top:"calc(100% - 64px)",
-              left:"0px",
-              bottom: "0px",
-              justifySelf:"center"
-            }}>
-            <div className="dropDownParks" >  
-              <button className="parkSelector closer" 
-              onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+          <div className="footer" style={{
+            position: "fixed",
+            top: "calc(100% - 64px)",
+            left: "0px",
+            bottom: "0px",
+            justifySelf: "center"
+          }}>
+            <div className="dropDownParks" >
+              <button className="parkSelector closer"
+                onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
             </div>
           </div>
         </div> : <div className="infoSectionCenter">
@@ -172,7 +169,7 @@ class Webcams extends Component {
           </div>
         </div>) : null}
         <div className="spacing" />
-        <div className="spacing" />  
+        <div className="spacing" />
       </> //END
     );
   }

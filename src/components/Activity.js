@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import info from '../images/info.png';
-import {isMobile} from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 class Activity extends Component {
 
@@ -79,11 +79,15 @@ class Activity extends Component {
     return;
   }
 
+  padding() {
+    return <div className="spacing" />;
+  }
+
   render() {
     return (
       <div>
-        <div className="spacing" />
-        <div className="spacing" />
+        {this.padding()}
+        {this.padding()}
         <div className="infoSectionCenter">
           <h1>Activities</h1>
           {this.state.isActive === false ?
@@ -91,30 +95,28 @@ class Activity extends Component {
               <img src={info} className='infoImg' />
               <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
-          : null}
+            : null}
           {this.activityData.map((x) => (
             <div>
-              {(this.state.selectedID === x.id && this.state.isActive === true) 
+              {(this.state.selectedID === x.id && this.state.isActive === true)
                 ?
-                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.switchButton(x.id)}>{x.name}</button> 
+                <button style={isMobile ? { width: "100%" } : {}} onClick={() => this.switchButton(x.id)}>{x.name}</button>
                 :
-                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>
+                <button style={isMobile ? { width: "100%" } : {}} onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>
               }
-              {(this.state.selectedID === x.id && this.state.isActive === true) ? 
-                <div className = "dropDownParks" style={ isMobile ? {width:"90%"}: {}}>
+              {(this.state.selectedID === x.id && this.state.isActive === true) ?
+                <div className="dropDownParks" style={isMobile ? { width: "90%" } : {}}>
                   {this.ParksByActivityList[0].parks.map((x) => (
                     <>
-                      <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
-                      <button className="parkSelector">{x.fullName}</button></Link>
+                      <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}>
+                        <button className="parkSelector">{x.fullName}</button></Link>
                     </>))
                   }
                 </div>
-              : null}
-                  
+                : null}
             </div>
-
           ))}</div>
-        <div className="spacing" />
+        {this.padding()}
       </div>
     );
   }

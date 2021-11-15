@@ -2,35 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png';
 import logoText from '../images/logoText.png';
-import {BrowserView, MobileView} from 'react-device-detect';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 const NavBar = () => {
+    const buttonHome = <Link to='/' style={{ textDecoration: 'none', }}>
+        <button className="footerbutton">Home</button>
+    </Link>;
+    const buttonWC = <Link to='/webcams' style={{ textDecoration: 'none' }}>
+        <button className="footerbutton">Web Cams</button>
+    </Link>;
+
+    const barSpace = <div className="barspacing" />;
+    const buttonWCMobile = <Link to='/webcams' style={{ textDecoration: 'none' }}>
+        <button className="footerbutton mobile">Web Cams</button>
+    </Link>;
+    const buttonHomeMobile = <Link to='/' style={{ textDecoration: 'none', }}>
+        <button className="footerbutton mobile">Home</button>
+    </Link>;
     //Browser and Mobile NavBars are different
     return (
         <div>
-            
+
             <BrowserView>
-            <div className="footer">
-                <Link to='/' style={{ textDecoration: 'none', }}>
-                    <button className="footerbutton">Home</button>
-                </Link>
-                <Link to='/webcams' style={{ textDecoration: 'none' }}>
-                    <button className="footerbutton">Web Cams</button>
-                </Link>
-                <div className="barspacing"/>
-                <img src={logoText} className='logo'/>
+                <div className="footer">
+                    {buttonHome}
+                    {buttonWC}
+                    {barSpace}
+                    <img src={logoText} className='logo' />
                 </div>
             </BrowserView>
 
             <MobileView>
-            <div className="footer">
-                <Link to='/' style={{ textDecoration: 'none', }}>
-                    <button className="footerbutton mobile">Home</button>
-                </Link>
-                <img src={logo} className='logo'/>
-                <Link to='/webcams' style={{ textDecoration: 'none' }}>
-                    <button className="footerbutton mobile">Web Cams</button>
-                </Link>
+                <div className="footer">
+                    {buttonHomeMobile}
+                    <img src={logo} className='logo' />
+                    {buttonWCMobile}
                 </div>
             </MobileView>
         </div>
