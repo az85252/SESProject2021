@@ -91,19 +91,25 @@ class Activity extends Component {
               <img src={info} className='infoImg' />
               <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
-            : null}
+          : null}
           {this.activityData.map((x) => (
             <div>
-              {(this.state.selectedID === x.id && this.state.isActive === true) ?
-                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.switchButton(x.id)}>{x.name}</button> :
-                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
+              {(this.state.selectedID === x.id && this.state.isActive === true) 
+                ?
+                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.switchButton(x.id)}>{x.name}</button> 
+                :
+                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>
+              }
               {(this.state.selectedID === x.id && this.state.isActive === true) ? 
-              <div className = "dropDownParks" style={ isMobile ? {width:"90%"}: {}}>
-                {this.ParksByActivityList[0].parks.map((x) => (
-                  <>
-                    <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
-                    <button className="parkSelector">{x.fullName}</button></Link>
-                  </>))}</div> : null}
+                <div className = "dropDownParks" style={ isMobile ? {width:"90%"}: {}}>
+                  {this.ParksByActivityList[0].parks.map((x) => (
+                    <>
+                      <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
+                      <button className="parkSelector">{x.fullName}</button></Link>
+                    </>))
+                  }
+                </div>
+              : null}
                   
             </div>
 

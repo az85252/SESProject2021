@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   render() {
+    //Setup all routes
     return (
       <main>
         <div className="App">
@@ -51,7 +52,6 @@ class App extends Component {
               <Route path={`/parkinfo/${x}`} component={ParkInfo} />
             </>
           ))}
-          
         </div>
         <NavBar />
       </main>

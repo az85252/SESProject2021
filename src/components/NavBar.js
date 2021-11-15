@@ -5,6 +5,7 @@ import logoText from '../images/logoText.png';
 import {BrowserView, MobileView} from 'react-device-detect';
 
 const NavBar = () => {
+    //Browser and Mobile NavBars are different
     return (
         <div>
             
@@ -20,6 +21,7 @@ const NavBar = () => {
                 <img src={logoText} className='logo'/>
                 </div>
             </BrowserView>
+
             <MobileView>
             <div className="footer">
                 <Link to='/' style={{ textDecoration: 'none', }}>
