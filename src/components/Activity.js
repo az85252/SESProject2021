@@ -79,15 +79,11 @@ class Activity extends Component {
     return;
   }
 
-  padding() {
-    return <div className="spacing" />;
-  }
-
   render() {
     return (
       <div>
-        {this.padding()}
-        {this.padding()}
+        <div className="spacing" />
+        <div className="spacing" />
         <div className="infoSectionCenter">
           <h1>Activities</h1>
           {this.state.isActive === false ?
@@ -114,9 +110,11 @@ class Activity extends Component {
                   }
                 </div>
                 : null}
+
             </div>
+
           ))}</div>
-        {this.padding()}
+        <div className="spacing" />
       </div>
     );
   }
