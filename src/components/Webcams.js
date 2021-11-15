@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import info from '../images/info.png';
+import {isMobile} from 'react-device-detect';
 
 class Webcams extends Component {
   APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -97,7 +98,7 @@ class Webcams extends Component {
         {this.state.showImages === false ? (
           <div className="infoSectionCenter">
             {(this.state.value).trim() !== "" ? <h1>Results</h1> : <h1>Parks</h1>}
-            <div className="dropDownParks">
+            <div className="dropDownParks" style={ isMobile ? {width:"100%"}: {}}>
             {Object.keys(this.state.names).map((x) => (
               <>
                 {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}

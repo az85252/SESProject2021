@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import info from '../images/info.png';
+import {isMobile} from 'react-device-detect';
 
 class Activity extends Component {
 
@@ -86,7 +87,7 @@ class Activity extends Component {
         <div className="infoSectionCenter">
           <h1>Activities</h1>
           {this.state.isActive === false ?
-            <div className="infoSectionCenter">
+            <div className="infoSectionCenter" >
               <img src={info} className='infoImg' />
               <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
@@ -94,10 +95,10 @@ class Activity extends Component {
           {this.activityData.map((x) => (
             <div>
               {(this.state.selectedID === x.id && this.state.isActive === true) ?
-                <button onClick={() => this.switchButton(x.id)}>{x.name}</button> :
-                <button onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
+                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.switchButton(x.id)}>{x.name}</button> :
+                <button style={ isMobile ? {width:"100%"}: {}} onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
               {(this.state.selectedID === x.id && this.state.isActive === true) ? 
-              <div className = "dropDownParks">
+              <div className = "dropDownParks" style={ isMobile ? {width:"90%"}: {}}>
                 {this.ParksByActivityList[0].parks.map((x) => (
                   <>
                     <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
