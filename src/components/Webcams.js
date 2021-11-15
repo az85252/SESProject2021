@@ -97,19 +97,18 @@ class Webcams extends Component {
         {this.state.showImages === false ? (
           <div className="infoSectionCenter">
             {(this.state.value).trim() !== "" ? <h1>Results</h1> : <h1>Parks</h1>}
+            <div className="dropDownParks">
             {Object.keys(this.state.names).map((x) => (
               <>
-                {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
+                {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
               </>
             ))}
+            </div>
           </div>
         ) : null}
 
         {this.state.showImages === true ? (this.state.images.length !== 0 ? <div className="infoSectionCenter">
-        
           <h1>Web Cameras</h1>
-          <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
-
           {this.state.images.length !== 0 && this.state.showImages === true ? this.state.images.map((x) => (
             <>
               <div className="infoSection">
@@ -120,15 +119,15 @@ class Webcams extends Component {
 
                 {x.images.length > 0 ?
                   x.images.map((y) => (
-
                     <div className="imageSection">
-                      <h3>{y.title}</h3>
+                      <h3 style={{textAlign: "center"}} >{y.title}</h3>
                       <a href={y.url}>
                         <img src={y.url} alt={y.altText}></img>
                       </a>
-
-                      <p>{y.caption}</p>
-                      <i>{y.credit}</i>
+                      <div className="infoSection">
+                        <p>{y.caption}</p>
+                        <i>{y.credit}</i>
+                      </div>
                     </div>
                   ))
                   : <h2>No images provided!</h2>}
@@ -137,7 +136,21 @@ class Webcams extends Component {
                 </form>
               </div>
             </>
-          )) : null}
+          )) 
+          : null}
+
+          <div className="footer"style={{
+              position: "fixed",
+              top:"calc(100% - 64px)",
+              left:"0px",
+              bottom: "0px",
+              justifySelf:"center"
+            }}>
+            <div className="dropDownParks" >  
+              <button className="parkSelector closer" 
+              onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+            </div>
+          </div>
         </div> : <div className="infoSectionCenter">
           <div>
             <img src={info} className='infoImg' /><h1>No Web Cameras Found!</h1>
@@ -146,9 +159,13 @@ class Webcams extends Component {
               <li>Check for any spelling and grammar mistakes</li>
               <li>Make sure the park name you entered is valid</li>
             </div>
-            <button className="parkSelector" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+            <div className="dropDownParks">
+              <button className="parkSelector closer" onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
+            </div>
           </div>
         </div>) : null}
+        <div className="spacing" />
+        <div className="spacing" />  
       </> //END
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {BrowserView, MobileView} from 'react-device-detect';
 
 class ParkInfo extends Component {
     APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -97,6 +98,7 @@ class ParkInfo extends Component {
     }
 
     render() {
+        //Due to the nature of this API, we must implement each information type
         return (
             <main className="parkInfo">
                 <div className="spacing" />
@@ -209,20 +211,25 @@ class ParkInfo extends Component {
                         <div className="seperator" />
                         <p>{this.state.weatherInfo}</p>
                     </div>
-
                     <div className="infoSection">
                         <h1>Images</h1>
                         <div className="seperator" />
                         {this.state.images.length > 0 ?
                             this.state.images.map((x) => (
                                 <div className="imageSection">
-                                    <h3>{x.title}</h3>
+                                    <h2 style={{textAlign: "center"}}>{x.title}</h2>
                                     <a href={x.url}>
-                                        <img src={x.url} alt={x.altText}></img>
+                                        <BrowserView>
+                                            <img src={x.url} alt={x.altText}></img>
+                                        </BrowserView>
+                                        <MobileView>
+                                            <img src={x.url} alt={x.altText} style={{width:"100%"}}></img>    
+                                        </MobileView>
                                     </a>
-
-                                    <p>{x.caption}</p>
-                                    <i>{x.credit}</i>
+                                    <div className="infoSection">
+                                        <p>{x.caption}</p>
+                                        <i>{x.credit}</i>
+                                    </div>
                                 </div>
                             ))
                             : <h2>No images provided!</h2>}

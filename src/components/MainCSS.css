@@ -3,6 +3,7 @@
   padding: 20px 0;
   text-align: center;
 }
+
 .newPost {
   align-items: center;
   display: flex;
@@ -25,7 +26,7 @@
   box-shadow: 0px 0px 4px #555555;
   justify-content: left;
   margin: 8px auto;
-  padding: 30px;
+  padding: 25px ;
   text-align:justify;
   width: 75%;
 }
@@ -36,7 +37,7 @@
   box-shadow: 0px 0px 4px #555555;
   justify-content: center;
   margin: 16px auto;
-  padding: 30px;
+  padding: 25px;
   text-align:center;
   width: 75%;
 }
@@ -85,6 +86,7 @@ button {
   min-height: 64px;
   overflow: hidden;
   text-decoration: none !important; 
+  transition: background-color .15s;
   width: 75%;
 }
 
@@ -93,26 +95,37 @@ button:hover{background:rgb(81, 185, 255);}
 button:active{background:rgba(112,16,10,1);}
 
 button.parkSelector { 
-  background:rgb(230, 230, 210); 
-  border:none; 
-  color: black; 
+  background:none;
+  border-bottom:  1px solid rgb(34, 109, 195);
+  border-radius: 0px;
+  color: rgb(34, 109, 195); 
   height: auto;
+  margin: -1px auto;
   min-height: 48px;
-  padding: 8px 8px;
-  width: 66.6%;
+  width: 100%;
+  transition: background-color .3s;
 }
-button.parkSelector:hover{background:lightyellow;}
+button.parkSelector.closer {
+  background:rgb(173, 20, 9);
+  color:  white;
+} 
+button.parkSelector:hover{
+  background:rgb(34, 109, 195);
+  color: white
+}
 
-button.parkSelector:active{background:chocolate;}
+button.parkSelector:active{background:rgba(112,16,10,1);
+  color: white}
 
 button.smallButton { 
   background: rgb(83, 83, 83); 
   border:none; 
   color: white;
-  min-height: auto;
+  display: inline;
   height: 48px; 
+  min-height: auto;
   width: auto;
-  display: inline; 
+  transition: background-color .1s; 
   margin: 2px;
 }
 button.smallButton:hover{background:rgb(34, 109, 195);}
@@ -158,14 +171,22 @@ label{
   background: rgba(184, 184, 184, 0.185);
   font-size: 20px;
   height: 48px;
+  margin: 8px 4px;
+  min-height: auto;
+  width: 15vw;
+}
+.footerbutton:hover{background:rgb(131, 131, 131);}
+
+.footerbutton:active{background:rgb(10, 46, 112);}
+
+.footerbutton.mobile{
+  background: rgba(184, 184, 184, 0.185);
+  font-size: 20px;
+  height: 48px;
   margin: 8px 8px 8px 8px;
   min-height: auto;
   width: 33vw;
 }
-
-.footerbutton:hover{background:rgb(131, 131, 131);}
-
-.footerbutton:active{background:rgb(10, 46, 112);}
 
 .logo{
   height: 64px;
@@ -187,6 +208,12 @@ label{
   width: 100%;
 }
 
-.roundContain{
-  margin: 0px
+.dropDownParks{
+  background: white;
+  border: 1px solid rgb(34, 109, 195);
+  border-radius: 16px;
+  padding: 0px auto;
+  margin: 0px auto;
+  overflow: hidden;
+  width: 66.6%;
 }

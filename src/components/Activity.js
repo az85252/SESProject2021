@@ -92,12 +92,12 @@ class Activity extends Component {
             </div>
             : null}
           {this.activityData.map((x) => (
-            <div className="parkList">
+            <div>
               {(this.state.selectedID === x.id && this.state.isActive === true) ?
                 <button onClick={() => this.switchButton(x.id)}>{x.name}</button> :
                 <button onClick={() => this.getParksByActivity(x.id)}>{x.name}</button>}
               {(this.state.selectedID === x.id && this.state.isActive === true) ? 
-              <div >
+              <div className = "dropDownParks">
                 {this.ParksByActivityList[0].parks.map((x) => (
                   <>
                     <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}> 
