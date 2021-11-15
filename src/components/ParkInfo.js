@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserView, MobileView} from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 class ParkInfo extends Component {
     APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -219,12 +219,7 @@ class ParkInfo extends Component {
                                 <div className="imageSection">
                                     <h2 style={{textAlign: "center"}}>{x.title}</h2>
                                     <a href={x.url}>
-                                        <BrowserView>
-                                            <img src={x.url} alt={x.altText} className="img" style = {{width:"75%"}}></img>
-                                        </BrowserView>
-                                        <MobileView>
-                                            <img src={x.url} alt={x.altText} className="img"></img>    
-                                        </MobileView>
+                                        <img src={x.url} alt={x.altText} className="img" style={!isMobile ? { width: "75%" } : {}}></img>
                                     </a>
                                     <div className="infoSection">
                                         <p>{x.caption}</p>

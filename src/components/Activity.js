@@ -91,7 +91,7 @@ class Activity extends Component {
               <img src={info} className='infoImg' />
               <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
-            : null}
+          : null}
           {this.activityData.map((x) => (
             <div>
               {(this.state.selectedID === x.id && this.state.isActive === true)
@@ -106,14 +106,14 @@ class Activity extends Component {
                     <>
                       <Link to={`/parkinfo/${x.parkCode}`} style={{ textDecoration: 'none' }}>
                         <button className="parkSelector">{x.fullName}</button></Link>
-                    </>))
+                    </>
+                    ))
                   }
                 </div>
-                : null}
-
+              : null}
             </div>
-
-          ))}</div>
+            ))
+          }</div>
         <div className="spacing" />
       </div>
     );

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import info from '../images/info.png';
 import { isMobile } from 'react-device-detect';
-import { BrowserView, MobileView } from 'react-device-detect';
 
 class Webcams extends Component {
   APIkey = "&api_key=0kqZUVchxPk1ACNqc9wYSnJMLgOLWt7fm2Yd8D85";
@@ -16,10 +15,10 @@ class Webcams extends Component {
       images: [],
       showImages: false
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   componentDidMount() {
     this.createLetterSlider();
     this.getParkNamesAndIDs();
@@ -48,7 +47,7 @@ class Webcams extends Component {
     for (var i = 0; i < 26; i++) {
       temp[String.fromCharCode(65 + i)] = "null";
     }
-    this.setState(({ alphabetChart: temp }), () => { });
+    this.setState(({ alphabetChart: temp }), () => {});
   }
 
   getParkNamesAndIDs() {
@@ -65,7 +64,6 @@ class Webcams extends Component {
         }
         this.setState(({ names: temp2 }), () => { });
         console.log(this.state.names);
-        console.log(Object.keys(this.state.names));
       });
   }
 
@@ -99,7 +97,8 @@ class Webcams extends Component {
             <div className="dropDownParks" style={isMobile ? { width: "100%" } : {}}>
               {Object.keys(this.state.names).map((x) => (
                 <>
-                  {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick={() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
+                  {((x).startsWith(this.state.value.toLowerCase()) || (this.state.value).trim() === "") ? <button className="parkSelector" onClick=
+                  {() => this.setState({ value: this.state.names[x][0] })}>{this.state.names[x][0]}</button> : null}
                 </>
               ))}
             </div>
@@ -121,12 +120,7 @@ class Webcams extends Component {
                     <div className="imageSection">
                       <h3 style={{ textAlign: "center" }} >{y.title}</h3>
                       <a href={y.url}>
-                        <BrowserView>
-                          <img src={y.url} alt={y.altText} className="img" style={{ width: "75%" }}></img>
-                        </BrowserView>
-                        <MobileView>
-                          <img src={y.url} alt={y.altText} className="img"></img>
-                        </MobileView>
+                        <img src={y.url} alt={y.altText} className="img" style={!isMobile ? { width: "75%" } : {}}></img>
                       </a>
                       <div className="infoSection">
                         <p>{y.caption}</p>
@@ -140,8 +134,8 @@ class Webcams extends Component {
                 </form>
               </div>
             </>
-          ))
-            : null}
+            ))
+          : null}
 
           <div className="footer" style={{
             position: "fixed",
@@ -149,7 +143,7 @@ class Webcams extends Component {
             left: "0px",
             bottom: "0px",
             justifySelf: "center"
-          }}>
+            }}>
             <div className="dropDownParks" >
               <button className="parkSelector closer"
                 onClick={() => this.setState({ value: "", showImages: false, images: [] })}>Close</button>
