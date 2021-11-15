@@ -28,14 +28,14 @@ const NavBar = () => {
                     {buttonHome}
                     {buttonWC}
                     {barSpace}
-                    <img src={logoText} className='logo' />
+                    <img src={logoText} className='logo' alt=""/>
                 </div>
             </BrowserView>
 
             <MobileView>
                 <div className="footer">
                     {buttonHomeMobile}
-                    <img src={logo} className='logo' />
+                    <img src={logo} className='logo' alt=""/>
                     {buttonWCMobile}
                 </div>
             </MobileView>

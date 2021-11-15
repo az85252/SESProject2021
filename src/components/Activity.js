@@ -87,7 +87,7 @@ class Activity extends Component {
           <h1>Activities</h1>
           {this.state.isActive === false ?
             <div className="infoSectionCenter" >
-              <img src={info} className='infoImg' />
+              <img src={info} className='infoImg' alt=""/>
               <h3>To find the parks based on the activity you want to search, click on one of the activities below.</h3>
             </div>
           : null}

@@ -151,7 +151,7 @@ class Webcams extends Component {
           </div>
         </div> : <div className="infoSectionCenter">
           <div>
-            <img src={info} className='infoImg' /><h1>No Web Cameras Found!</h1>
+            <img src={info} className='infoImg' alt=""/><h1>No Web Cameras Found!</h1>
             <div className="infoSection">
               <li>This park may not have any web cameras provided</li>
               <li>Check for any spelling and grammar mistakes</li>
