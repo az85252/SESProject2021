@@ -52,7 +52,6 @@ class Activity extends Component {
         .then(response => response.json())
         .then(json => {
           this.ParksByActivityList = json.data;
-          this.ParksByActivityList = this.ParksByActivityList;
           this.setSelectedID(activityID);
         });
     }
