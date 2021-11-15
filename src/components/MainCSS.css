@@ -87,7 +87,7 @@ button {
   overflow: hidden;
   text-decoration: none !important; 
   transition: background-color .15s;
-  width: 75%;
+  width: 66.6%;
 }
 
 button:hover{background:rgb(81, 185, 255);}
@@ -215,5 +215,5 @@ label{
   padding: 0px auto;
   margin: 0px auto;
   overflow: hidden;
-  width: 60%;
+  width: 50%;
 }
